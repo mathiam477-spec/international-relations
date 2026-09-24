@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>International Relations - Course & Quiz</title>
+    <title>IR Study Guide & Exam Prep</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,6 +17,7 @@
                         primary: '#1e3a8a', // Dark blue
                         secondary: '#3b82f6', // Light blue
                         accent: '#f59e0b', // Amber
+                        danger: '#ef4444', // Red for exam alerts
                         background: '#f8fafc',
                         surface: '#ffffff',
                     }
@@ -29,7 +30,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         body {
@@ -55,7 +56,7 @@
 
         /* Google Translate Widget Overrides */
         #google_translate_element {
-            margin-top: 10px;
+            margin-top: 8px;
         }
         
         .goog-te-banner-frame.skiptranslate {
@@ -101,26 +102,28 @@
 </head>
 <body class="bg-background text-slate-800 min-h-screen flex flex-col">
 
-    <!-- Mobile-first Header -->
     <header class="bg-primary text-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-4 py-3">
             <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-3 w-full sm:w-auto">
                     <i class="fa-solid fa-globe text-2xl text-accent"></i>
-                    <h1 class="text-xl md:text-2xl font-bold tracking-tight">International Relations</h1>
+                    <div class="flex flex-col">
+                        <h1 class="text-xl md:text-2xl font-bold tracking-tight leading-tight">International Relations</h1>
+                        <span class="text-xs text-blue-200 uppercase font-semibold tracking-wider">Exam Prep Hub</span>
+                    </div>
                 </div>
                 
                 <!-- Google Translate Widget Container -->
-                <div id="google_translate_element" class="bg-white/10 rounded px-2 py-1 text-sm"></div>
+                <div id="google_translate_element" class="bg-white/10 rounded px-2 py-1 text-sm self-end sm:self-center"></div>
             </div>
             
             <!-- Tab Navigation -->
             <nav class="flex mt-4 overflow-x-auto gap-2 pb-1 scrollbar-hide">
-                <button onclick="switchTab('courses')" id="tab-courses" class="nav-tab flex-1 whitespace-nowrap px-4 py-2 bg-white text-primary rounded-t-lg font-medium transition-colors border-b-2 border-accent">
+                <button onclick="switchTab('courses')" id="tab-courses" class="nav-tab flex-1 whitespace-nowrap px-4 py-3 bg-white text-primary rounded-t-lg font-bold transition-colors border-b-4 border-accent">
                     <i class="fa-solid fa-book-open mr-2"></i> Study Notes
                 </button>
-                <button onclick="switchTab('quiz')" id="tab-quiz" class="nav-tab flex-1 whitespace-nowrap px-4 py-2 bg-primary text-white hover:bg-blue-800 rounded-t-lg font-medium transition-colors border-b-2 border-transparent">
-                    <i class="fa-solid fa-list-check mr-2"></i> Quiz Test
+                <button onclick="switchTab('quiz')" id="tab-quiz" class="nav-tab flex-1 whitespace-nowrap px-4 py-3 bg-primary text-blue-100 hover:bg-blue-800 hover:text-white rounded-t-lg font-semibold transition-colors border-b-4 border-transparent">
+                    <i class="fa-solid fa-list-check mr-2"></i> Professor's Quiz
                 </button>
             </nav>
         </div>
@@ -131,165 +134,222 @@
         
         <!-- COURSES SECTION -->
         <section id="courses-section" class="tab-content active">
-            <div class="mb-6">
-                <h2 class="text-2xl font-bold text-primary mb-2">Comprehensive Study Notes</h2>
-                <p class="text-slate-500 text-sm">Full coverage of your International Relations lectures.</p>
+            
+            <!-- Professor's Warning -->
+            <div class="mb-6 bg-red-50 border-l-4 border-danger p-4 rounded-r-lg shadow-sm">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <i class="fa-solid fa-triangle-exclamation text-danger mt-1"></i>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="text-sm font-bold text-danger uppercase tracking-wider">Professor's Exam Guidelines</h3>
+                        <div class="mt-2 text-sm text-red-800 space-y-1">
+                            <p><strong>Exam scope:</strong> Weeks 1 to 6 (Exam postponed to Week 6).</p>
+                            <p><strong>Crucial readings:</strong> Baylis (Ch. 3,4,5,6 - Historical Context) and the London chapter on Power.</p>
+                            <p><strong>Core Quote:</strong> <em>"International relations is everything about power."</em></p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="space-y-6">
+            <div class="space-y-4">
                 
-                <!-- Chapter 1: Fundamental Concepts & Actors -->
+                <!-- Lesson 1 -->
                 <article class="course-card bg-surface rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <div class="bg-slate-50 px-5 py-4 border-b border-slate-200 flex items-center justify-between cursor-pointer" onclick="toggleAccordion('content-1', 'icon-1')">
-                        <h3 class="font-bold text-lg text-primary"><i class="fa-solid fa-landmark mr-2"></i>1. Core Concepts, Actors & Power</h3>
-                        <i id="icon-1" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </div>
+                    <button class="w-full text-left bg-slate-50 px-5 py-4 border-b border-slate-200 flex items-center justify-between focus:outline-none focus:bg-slate-100" onclick="toggleAccordion('content-1', 'icon-1')">
+                        <h3 class="font-bold text-lg text-primary"><i class="fa-solid fa-play mr-3 text-secondary"></i>1. Introduction to IR & Actors</h3>
+                        <i id="icon-1" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                    </button>
                     <div id="content-1" class="p-5 space-y-4 hidden">
                         <div>
-                            <h4 class="font-semibold text-secondary border-b pb-1 mb-2">State, Nation, and Sovereignty</h4>
-                            <p class="text-sm text-slate-600 mb-2">Anarchy is the ordering principle of the international system (no central overriding authority). Within this system, the main units are states.</p>
+                            <h4 class="font-bold text-secondary flex items-center mb-2"><i class="fa-solid fa-tag text-xs mr-2"></i>Core Concepts</h4>
+                            <p class="text-sm text-slate-600 mb-2">IR is not just "how countries communicate", but <strong>how and why international actors interact with each other.</strong> It is directly linked to International Business (geopolitical due diligence).</p>
+                            
+                            <div class="bg-blue-50 p-3 rounded border-l-2 border-blue-400 my-3">
+                                <p class="text-sm font-semibold text-blue-800">Definition: International Actor</p>
+                                <p class="text-xs text-blue-900 mt-1">An actor capable of influencing international relations. <strong>International actors = States + Non-state actors.</strong></p>
+                            </div>
+                            
                             <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                                <li><strong>The State:</strong> An organized political entity defined by the <strong>Montevideo Convention (1933)</strong> with 4 criteria: A permanent population, a defined territory, a government, and the capacity to enter into relations with other states.</li>
-                                <li><strong>Nation & Nation-State:</strong> A <strong>Nation</strong> is an "imagined community" (Benedict Anderson) sharing culture, language, or history. A <strong>Nation-State</strong> combines this identity with fixed borders and a government.</li>
-                                <li><strong>Stateless Nation:</strong> A group with a common identity but lacking their own sovereign government (e.g., Kurds, Palestinians).</li>
-                                <li><strong>Sovereignty vs. Independence:</strong> Independence is formal; sovereignty is the actual supreme authority (internal control and external recognition). E.g., Iraq after 2003 was independent but had limited sovereignty due to US occupation.</li>
+                                <li><strong>Nation-States:</strong> Primary actors (sign treaties, trade, war).</li>
+                                <li><strong>Non-State Actors:</strong> Multinational Corporations (MNCs), International Organizations, Individuals.</li>
                             </ul>
                         </div>
+                        
                         <div>
-                            <h4 class="font-semibold text-secondary border-b pb-1 mb-2">International Actors</h4>
-                            <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                                <li><strong>Interstate Governmental Actors (IGOs):</strong> Created by states (UN, NATO, WTO).</li>
-                                <li><strong>Interstate Nongovernmental Actors:</strong> Multinational Corporations (MNCs like Apple) and NGOs. MNCs promote globalization and control vast economic power.</li>
-                                <li><strong>Other Actors:</strong> Governmental Noncentral Actors (regions/cities), Intrastate Armed/Social groups, and Individuals (leaders).</li>
+                            <h4 class="font-bold text-secondary flex items-center mb-2"><i class="fa-solid fa-layer-group text-xs mr-2"></i>Levels of Analysis</h4>
+                            <p class="text-sm text-slate-600 mb-2">To understand why a country behaves a certain way, look at three levels:</p>
+                            <ul class="list-decimal pl-5 text-sm text-slate-600 space-y-1">
+                                <li><strong>Systemic / International level:</strong> Distribution of power, alliances, system structure.</li>
+                                <li><strong>Domestic level:</strong> Political system, institutions, internal economy.</li>
+                                <li><strong>Individual level:</strong> Leaders and their decisions.</li>
                             </ul>
                         </div>
-                        <div>
-                            <h4 class="font-semibold text-secondary border-b pb-1 mb-2">Power and Polarity</h4>
-                            <p class="text-sm text-slate-600 mb-2">Power is relative and relational (the ability to influence others). It takes several forms:</p>
-                            <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                                <li><strong>Hard Power (Sticks/Carrots):</strong> Military force or economic pressure/sanctions.</li>
-                                <li><strong>Soft Power (Joseph Nye):</strong> The ability to attract and co-opt using cultural influence, political values, and legitimate policies (e.g., the "American Way of Life").</li>
-                                <li><strong>Smart Power:</strong> Strategic combination of both hard and soft power.</li>
+                        
+                        <!-- Exam Alert Box -->
+                        <div class="bg-amber-50 p-3 rounded border border-amber-200 mt-4">
+                            <p class="text-xs font-bold text-amber-800 uppercase"><i class="fa-solid fa-thumbtack mr-1"></i> Exam Key Takeaways</p>
+                            <ul class="text-xs text-amber-900 mt-2 space-y-1 list-inside list-disc">
+                                <li><strong>Anarchy:</strong> There is no overarching global authority. It does NOT mean "total chaos".</li>
+                                <li><strong>Geopolitics:</strong> Relationship between geography, power, and political interests.</li>
+                                <li><strong>Diplomacy:</strong> A tool to shape international behavior (via aid, trade, sanctions).</li>
                             </ul>
-                            <p class="text-sm text-slate-600 mt-2"><strong>Polarity</strong> refers to the distribution of power (Unipolar, Bipolar during Cold War, Multipolar).</p>
                         </div>
                     </div>
                 </article>
 
-                <!-- Chapter 2: Historical Context -->
+                <!-- Lesson 2 -->
                 <article class="course-card bg-surface rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <div class="bg-slate-50 px-5 py-4 border-b border-slate-200 flex items-center justify-between cursor-pointer" onclick="toggleAccordion('content-2', 'icon-2')">
-                        <h3 class="font-bold text-lg text-primary"><i class="fa-solid fa-clock-rotate-left mr-2"></i>2. Historical Context & Globalization</h3>
-                        <i id="icon-2" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </div>
+                    <button class="w-full text-left bg-slate-50 px-5 py-4 border-b border-slate-200 flex items-center justify-between focus:outline-none focus:bg-slate-100" onclick="toggleAccordion('content-2', 'icon-2')">
+                        <h3 class="font-bold text-lg text-primary"><i class="fa-solid fa-landmark mr-3 text-secondary"></i>2. Historical Context & Anarchy</h3>
+                        <i id="icon-2" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                    </button>
                     <div id="content-2" class="p-5 space-y-4 hidden">
-                        <div>
-                            <h4 class="font-semibold text-secondary border-b pb-1 mb-2">The Making of Modern Order</h4>
-                            <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                                <li><strong>Peace of Westphalia (1648):</strong> Ended the 30 Years' War. Established the legal basis of modern world politics: Territoriality, Sovereignty, and Autonomy (non-intervention).</li>
-                                <li><strong>The Great Divergence & Imperialism:</strong> 1800-1900 saw the West drastically outpace Asia in GDP due to industrialization, "rational states," and imperialism (e.g., the British Empire).</li>
-                                <li><strong>World Wars & Institutions:</strong> WWI led to the Treaty of Versailles and the failed <em>League of Nations</em>. WWII led to the <strong>United Nations (1945)</strong> and the <strong>Bretton Woods System (1944)</strong> which created the IMF, World Bank, and set the dollar-gold standard.</li>
-                            </ul>
+                        <div class="bg-red-50 p-3 rounded border-l-2 border-red-400 mb-4">
+                            <p class="text-sm font-bold text-red-800">Crucial Exam Definition: International Order</p>
+                            <p class="text-sm text-red-900 mt-1 italic">"Regularized practices of exchange among discrete political units that recognize each other to be independent."</p>
                         </div>
+
                         <div>
-                            <h4 class="font-semibold text-secondary border-b pb-1 mb-2">The Cold War & Beyond</h4>
-                            <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                                <li><strong>Cold War (1947-1991):</strong> Bipolar tension. Characterized by the <em>Truman Doctrine</em> (containment of communism), <em>Mutually Assured Destruction (MAD)</em>, and crises like the Cuban Missile Crisis (1962). Ended with Gorbachev's reforms (Glasnost/Perestroika) and the fall of the USSR.</li>
-                                <li><strong>Post-Cold War Era:</strong> The "War on Terror" (post-9/11/2001), the Arab Spring (2011), the rise of BRICS demanding global governance reform, and renewed conflict (Russia/Ukraine, US/China trade wars).</li>
-                            </ul>
+                            <h4 class="font-bold text-secondary mb-2">Interdependence & The Security Dilemma</h4>
+                            <p class="text-sm text-slate-600 mb-2">Interaction creates <strong>Interdependence</strong> ("I have what you need. You have what I need. Let's trade!").</p>
+                            
+                            <div class="bg-slate-100 p-3 rounded text-sm text-slate-700 mb-3 border border-slate-200">
+                                <strong>Liberal Logic:</strong> Interdependence &rarr; Cooperation &rarr; Harmony of interests &rarr; Higher cost of conflict &rarr; Lower incentives for war.
+                                <br><br>
+                                <span class="text-danger font-bold"><i class="fa-solid fa-xmark"></i> Exam Trap:</span> Interdependence does <strong>NOT</strong> guarantee peace. (e.g., UK/Germany before WWI, US/China today). It only <em>reduces incentives</em>.
+                            </div>
+
+                            <div class="bg-slate-100 p-3 rounded text-sm text-slate-700 border border-slate-200">
+                                <strong>Realist Logic (Security Dilemma):</strong> State A builds power to survive &rarr; State B feels threatened and builds arms &rarr; Arms Race &rarr; Potential Conflict.
+                                <br>
+                                <em>"It's better to be Godzilla than to be Bambi."</em> (Weak states must seek powerful allies).
+                            </div>
                         </div>
+
                         <div>
-                            <h4 class="font-semibold text-secondary border-b pb-1 mb-2">Globalization vs. Slowbalization</h4>
-                            <p class="text-sm text-slate-600">The "Golden Age" of globalization (1990-2010) saw massive trade and integration. However, recent events (2008 financial crisis, COVID-19, US-China trade wars) have led to <strong>Slowbalization</strong> or even Deglobalization. Realists view globalization as epiphenomenal—subordinate to underlying geopolitical power struggles.</p>
+                            <h4 class="font-bold text-secondary mb-2">From Westphalia to Today</h4>
+                            <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
+                                <li><strong>Peace of Westphalia (1648):</strong> The birth of the modern Nation-State system.</li>
+                                <li><strong>System Evolution:</strong> Moved from regional orders to a global system driven by technology and globalization.</li>
+                                <li><strong>Current State:</strong> The <em>Western-led / Rules-Based / Liberal International Order</em> is currently in a systemic crisis due to multipolarization and Great Power Competition (US vs. China).</li>
+                            </ul>
                         </div>
                     </div>
                 </article>
 
-                <!-- Chapter 3: Realism -->
+                <!-- Lesson 3 -->
                 <article class="course-card bg-surface rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <div class="bg-slate-50 px-5 py-4 border-b border-slate-200 flex items-center justify-between cursor-pointer" onclick="toggleAccordion('content-3', 'icon-3')">
-                        <h3 class="font-bold text-lg text-primary"><i class="fa-solid fa-chess-rook mr-2"></i>3. Realism in IR</h3>
-                        <i id="icon-3" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </div>
+                    <button class="w-full text-left bg-slate-50 px-5 py-4 border-b border-slate-200 flex items-center justify-between focus:outline-none focus:bg-slate-100" onclick="toggleAccordion('content-3', 'icon-3')">
+                        <h3 class="font-bold text-lg text-primary"><i class="fa-solid fa-bolt mr-3 text-secondary"></i>3. Power, Polarity & The Cold War</h3>
+                        <i id="icon-3" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                    </button>
                     <div id="content-3" class="p-5 space-y-4 hidden">
-                        <p class="text-sm bg-slate-100 p-3 rounded border-l-4 border-primary italic">
-                            "We have no eternal allies, and we have no perpetual enemies. Our interests are eternal and perpetual." - Lord Palmerston
-                        </p>
                         <div>
-                            <h4 class="font-semibold text-secondary border-b pb-1 mb-2">The 3 Core Elements (3 S's) & Realpolitik</h4>
-                            <p class="text-sm text-slate-600 mb-2">Driven by <em>Realpolitik</em> (practical/material considerations over morals) and <em>Raison d'État</em> (national survival above all).</p>
-                            <ol class="list-decimal pl-5 text-sm text-slate-600 space-y-1">
-                                <li><strong>Statism:</strong> The state is the pre-eminent actor. Sovereignty is absolute.</li>
-                                <li><strong>Survival:</strong> The primary goal. Universal morality does not apply to states.</li>
-                                <li><strong>Self-help:</strong> In anarchy, no other state can guarantee your security, creating a <em>Security Dilemma</em>.</li>
-                            </ol>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-secondary border-b pb-1 mb-2">Thinkers & Variants of Realism</h4>
-                            <ul class="list-disc pl-5 text-sm text-slate-600 space-y-2">
-                                <li><strong>Classical Realism (Human Nature):</strong> Rooted in the flawed, power-seeking nature of humans.
-                                    <br><em>Thinkers:</em> Thucydides ("the strong do what they can..."), Machiavelli (better to be feared than loved), Hobbes (war of all against all), Hans Morgenthau (morality cannot be applied to state actions).
-                                </li>
-                                <li><strong>Neorealism / Structural Realism (Anarchy):</strong> The anarchic <em>system</em> causes conflict, not human nature.
-                                    <br><em>Defensive (Kenneth Waltz):</em> States seek moderate security; bipolarity is most stable.
-                                    <br><em>Offensive (John Mearsheimer):</em> States must pursue hegemony to survive ("better to be Godzilla than Bambi"). Mearsheimer notably blames NATO expansion for the Ukraine crisis.
-                                </li>
-                                <li><strong>Neoclassical Realism:</strong> Combines systemic anarchy with domestic variables (leaders' perceptions, elites).
-                                    <br><em>Thinkers:</em> Fareed Zakaria, Gideon Rose.
-                                </li>
+                            <h4 class="font-bold text-secondary mb-2">Historical Milestones</h4>
+                            <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
+                                <li><strong>1919 (University of Wales):</strong> Birth of IR as a discipline. First scholars were "Idealists" trying to prevent war.</li>
+                                <li><strong>League of Nations:</strong> Failed to prevent WWII.</li>
+                                <li><strong>Treaty of Versailles (1919) & Great Depression (1929):</strong> Harsh reparations led to nationalism and WWII (Example of International Political Economy).</li>
+                                <li><strong>1945:</strong> United Nations replaces League; Bretton Woods establishes global economic governance.</li>
                             </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-secondary mb-2">The Cold War & Containment</h4>
+                            <p class="text-sm text-slate-600 mb-2">During the Cold War, there was ONE global system, but TWO competing International Orders (Western vs. Communist).</p>
+                            <p class="text-sm text-slate-600 mb-2"><strong>Containment (Truman Doctrine):</strong> Strategy to prevent the expansion of an adversary's power (Communism). Rooted in Realism.</p>
+                            <p class="text-sm text-slate-600"><strong>Post-1991:</strong> Collapse of USSR led to Unipolarity (US dominance) and the expansion of the Rules-Based Order. The <em>Rise of the Rest</em> (China, India) has now created a Multipolar world.</p>
+                        </div>
+
+                        <div class="bg-blue-50 p-4 rounded-lg mt-4 border border-blue-100">
+                            <h4 class="font-bold text-primary mb-3"><i class="fa-solid fa-fist-raised mr-2"></i>The Concept of Power</h4>
+                            <p class="text-sm font-semibold text-slate-700 mb-2">Definition: The ability to influence the behavior of others.</p>
+                            <ul class="text-sm text-slate-600 space-y-2">
+                                <li>🔥 <strong>Hard Power:</strong> Influence via coercion (military, economic sanctions).</li>
+                                <li>🌊 <strong>Soft Power (J. Nye):</strong> Influence via attraction, values, culture ("lead by example").</li>
+                                <li>⚖️ <strong>Institutional Power:</strong> Shaping the rules of the game.</li>
+                                <li>📊 <strong>Relative Power vs Absolute Power:</strong> Relative power (your power <em>compared</em> to others) is what truly matters in IR.</li>
+                            </ul>
+                            <p class="text-sm font-bold text-slate-700 mt-3 border-t border-blue-200 pt-2">Polarity: How power is distributed.</p>
+                            <p class="text-xs text-slate-600">Bipolarity (Cold War) &rarr; Unipolarity (1990s) &rarr; Multipolarity (Today).</p>
                         </div>
                     </div>
                 </article>
 
-                <!-- Chapter 4: Liberalism -->
+                <!-- Lesson 4 -->
                 <article class="course-card bg-surface rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <div class="bg-slate-50 px-5 py-4 border-b border-slate-200 flex items-center justify-between cursor-pointer" onclick="toggleAccordion('content-4', 'icon-4')">
-                        <h3 class="font-bold text-lg text-primary"><i class="fa-solid fa-dove mr-2"></i>4. Liberalism in IR</h3>
-                        <i id="icon-4" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </div>
+                    <button class="w-full text-left bg-slate-50 px-5 py-4 border-b border-slate-200 flex items-center justify-between focus:outline-none focus:bg-slate-100" onclick="toggleAccordion('content-4', 'icon-4')">
+                        <h3 class="font-bold text-lg text-primary"><i class="fa-solid fa-dove mr-3 text-secondary"></i>4. Liberalism Theory</h3>
+                        <i id="icon-4" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                    </button>
                     <div id="content-4" class="p-5 space-y-4 hidden">
-                        <p class="text-sm bg-blue-50 p-3 rounded border-l-4 border-blue-400">
-                            <strong>Core Beliefs:</strong> Optimistic view of human nature. Rationality and freedom are inherent. War is a failure of cooperation; peace must be constructed.
-                        </p>
-                        <div>
-                            <h4 class="font-semibold text-secondary border-b pb-1 mb-2">Key Thinkers & Origins</h4>
-                            <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                                <li><strong>Hugo Grotius & Samuel Pufendorf:</strong> Early concepts of Natural Law and international sociability.</li>
-                                <li><strong>John Locke:</strong> Government based on social contract; natural rights (life, liberty, property).</li>
-                                <li><strong>Immanuel Kant:</strong> Author of <em>Perpetual Peace</em>. Proposed a federation of free republics.</li>
-                                <li><strong>Woodrow Wilson:</strong> Driving force behind the League of Nations (Liberal Internationalism).</li>
-                                <li><strong>Francis Fukuyama:</strong> Declared the "End of History" (1992) — the ultimate triumph of Western liberal democracy post-Cold War.</li>
-                            </ul>
+                        <p class="text-sm text-slate-600">Liberals accept that the system is anarchic, but believe this anarchy can be organized through <strong>Interdependence, Cooperation, and Institutions.</strong></p>
+                        
+                        <div class="bg-slate-100 p-3 rounded text-sm text-slate-700 border border-slate-200 font-mono">
+                            Interdependence &rarr; Shared Interests &rarr; Cooperation &rarr; International Regimes &rarr; Peace
                         </div>
+
                         <div>
-                            <h4 class="font-semibold text-secondary border-b pb-1 mb-2">Key Principles & Democratic Peace</h4>
-                            <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                                <li><strong>Interdependence & Trade:</strong> Economic ties reduce the incentive for war (positive-sum game).</li>
-                                <li><strong>Democratic Peace Theory:</strong> Democracies rarely fight each other due to shared values and domestic constraints (citizens bear the cost of war).</li>
-                                <li><strong>State is NOT Unitary:</strong> Foreign policy is a competition among internal bureaucracies, lobbies, and public opinion.</li>
-                            </ul>
+                            <h4 class="font-bold text-secondary mb-1">International Regimes</h4>
+                            <p class="text-sm text-slate-600">A set of <strong>principles, norms, rules, decision-making procedures, and organizations</strong> that organize international cooperation. They help solve transnational problems (climate, economy) that single states cannot solve alone.</p>
+                            <p class="text-xs text-slate-500 mt-1 italic">Note: International law relies on State Consent. There is no world government for enforcement.</p>
                         </div>
+
                         <div>
-                            <h4 class="font-semibold text-secondary border-b pb-1 mb-2">Neoliberalism & International Regimes</h4>
-                            <p class="text-sm text-slate-600">Neoliberal institutionalists (like Keohane and Nye) argue that while the system is anarchic, <strong>International Regimes</strong> (rules, norms, and institutions like the WTO or Non-Proliferation treaties) allow states to coordinate, reduce uncertainty, and collaborate effectively without a global government.</p>
+                            <h4 class="font-bold text-secondary mb-1">Democratic Peace Theory</h4>
+                            <p class="text-sm text-slate-600">Liberal democracies are less likely to go to war <strong>with each other</strong> (due to shared values and institutions). However, they can still go to war with non-democracies. <br><br><em>Exam note: This is an explanatory theory, NOT "Democracy promotion" (which is a foreign policy).</em></p>
+                        </div>
+
+                        <div class="bg-amber-50 p-3 rounded border border-amber-200 mt-2">
+                            <p class="text-xs font-bold text-amber-800 uppercase">Key Thinkers</p>
+                            <p class="text-xs text-amber-900">John Locke, Immanuel Kant, David Ricardo. <em>(Also Francis Fukuyama - "End of History", though this text is optional for the exam).</em></p>
                         </div>
                     </div>
                 </article>
 
-                <!-- Chapter 5: Levels of Analysis -->
+                <!-- Lesson 5 -->
                 <article class="course-card bg-surface rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <div class="bg-slate-50 px-5 py-4 border-b border-slate-200 flex items-center justify-between cursor-pointer" onclick="toggleAccordion('content-5', 'icon-5')">
-                        <h3 class="font-bold text-lg text-primary"><i class="fa-solid fa-layer-group mr-2"></i>5. Levels of Analysis</h3>
-                        <i id="icon-5" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </div>
+                    <button class="w-full text-left bg-slate-50 px-5 py-4 border-b border-slate-200 flex items-center justify-between focus:outline-none focus:bg-slate-100" onclick="toggleAccordion('content-5', 'icon-5')">
+                        <h3 class="font-bold text-lg text-primary"><i class="fa-solid fa-chess-knight mr-3 text-secondary"></i>5. Realism Theory</h3>
+                        <i id="icon-5" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                    </button>
                     <div id="content-5" class="p-5 space-y-4 hidden">
-                        <p class="text-sm text-slate-600 mb-4">To understand complex world politics, IR uses three levels to determine which facts are central to the analysis:</p>
+                        <p class="text-sm text-slate-600">Developed as a critique of Idealism post-WWII. Realism is primarily concerned with the <strong>persistence of conflict and war</strong>.</p>
+                        
+                        <div class="bg-red-50 border-2 border-red-200 p-4 rounded-lg my-4 shadow-sm">
+                            <h4 class="font-extrabold text-red-800 mb-3 text-center tracking-wide">THE THREE S's OF REALISM</h4>
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded border border-red-100">
+                                    <span class="font-bold text-danger text-base">1. Statism</span>
+                                    <p class="text-xs text-slate-700 mt-1">States are the most important actors. Sovereignty = Ultimate internal authority + No higher external authority.</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-red-100">
+                                    <span class="font-bold text-danger text-base">2. Survival</span>
+                                    <p class="text-xs text-slate-700 mt-1">The fundamental objective. Because of anarchy, survival cannot be guaranteed.</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-red-100">
+                                    <span class="font-bold text-danger text-base">3. Self-Help</span>
+                                    <p class="text-xs text-slate-700 mt-1">States must build their own power to survive; they cannot rely on others.</p>
+                                </div>
+                            </div>
+                        </div>
+
                         <div>
-                            <ul class="list-disc pl-5 text-sm text-slate-600 space-y-3">
-                                <li><strong>System Level (The Forest):</strong> Looks at the system as a whole. Focuses on the distribution of power (polarity), global anarchy, and interactions between states. <em>(Primary focus of Neorealism and Neoliberalism).</em></li>
-                                <li><strong>State / Domestic Level (The Tree):</strong> Looks inside the state. Focuses on government structure (democracy vs. authoritarian), economy, public opinion, and interest groups. E.g., How Portugal's <em>Estado Novo</em> regime delayed African decolonization. <em>(Primary focus of Liberalism).</em></li>
-                                <li><strong>Individual Level (The Roots):</strong> Focuses on specific human beings. Examines the psychology of leaders, bounded rationality, personal beliefs, health, and groupthink dynamics.</li>
+                            <h4 class="font-bold text-secondary mb-1">The Realist Chain of Conflict</h4>
+                            <p class="text-sm text-slate-600 mb-2">Must know this logic for the exam:</p>
+                            <div class="bg-slate-800 text-green-400 font-mono text-xs p-3 rounded overflow-x-auto whitespace-nowrap">
+                                1. Anarchy &rarr; 2. Insecurity &rarr; 3. Survival &rarr; 4. Self-help &rarr;<br> 
+                                5. Power &rarr; 6. Security Dilemma &rarr; 7. Arms Race &rarr; 8. Conflict
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-secondary mb-1">Variants of Realism (Preview)</h4>
+                            <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
+                                <li><strong>Classical Realism:</strong> Conflict is due to flawed Human Nature (Machiavelli, Hobbes, Morgenthau).</li>
+                                <li><strong>Neorealism (Structural):</strong> Conflict is due to the Anarchic System (Waltz, Mearsheimer).</li>
+                                <li><strong>Neoclassical Realism:</strong> Systemic anarchy + Domestic variables (leaders, institutions) (Zakaria).</li>
                             </ul>
                         </div>
                     </div>
@@ -300,19 +360,23 @@
 
         <!-- QUIZ SECTION -->
         <section id="quiz-section" class="tab-content">
+            
+            <!-- Pre-Quiz Alert -->
             <div id="quiz-intro" class="text-center py-10 bg-white rounded-xl shadow-sm border border-slate-200">
-                <i class="fa-solid fa-graduation-cap text-5xl text-accent mb-4"></i>
-                <h2 class="text-2xl font-bold text-primary mb-2">Test Your Knowledge</h2>
-                <p class="text-slate-500 mb-6 px-4">This quiz contains 10 questions covering Realism, Liberalism, and IR concepts.</p>
+                <div class="inline-block bg-blue-100 p-4 rounded-full mb-4">
+                    <i class="fa-solid fa-graduation-cap text-4xl text-primary"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-primary mb-2">The Professor's Exam Simulator</h2>
+                <p class="text-slate-500 mb-6 px-4 max-w-lg mx-auto">This quiz draws from the exact definitions, nuances, and traps highlighted in the review guide for Weeks 1-6.</p>
                 <button onclick="startQuiz()" class="bg-primary hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
-                    Start Quiz
+                    Start 10-Question Test
                 </button>
             </div>
 
             <!-- Question Container -->
             <div id="quiz-container" class="hidden bg-white rounded-xl shadow-sm border border-slate-200 p-4 sm:p-6 md:p-8">
                 <div class="flex justify-between items-center mb-6">
-                    <span class="text-sm font-semibold text-slate-400 uppercase tracking-wider" id="question-counter">Question 1/10</span>
+                    <span class="text-sm font-semibold text-slate-400 uppercase tracking-wider" id="question-counter">Q 1/10</span>
                     <div class="w-1/2 bg-slate-200 rounded-full h-2">
                         <div id="progress-bar" class="bg-accent h-2 rounded-full transition-all duration-300" style="width: 10%"></div>
                     </div>
@@ -331,7 +395,7 @@
                 </div>
 
                 <div class="mt-8 flex justify-end">
-                    <button id="next-btn" onclick="nextQuestion()" class="hidden bg-primary text-white font-medium py-2 px-6 rounded-lg hover:bg-blue-800 transition-colors">
+                    <button id="next-btn" onclick="nextQuestion()" class="hidden bg-primary text-white font-medium py-2 px-6 rounded-lg hover:bg-blue-800 transition-colors shadow-sm">
                         Next <i class="fa-solid fa-arrow-right ml-2"></i>
                     </button>
                 </div>
@@ -340,24 +404,27 @@
             <!-- Results Screen -->
             <div id="result-container" class="hidden text-center py-10 bg-white rounded-xl shadow-sm border border-slate-200">
                 <div id="score-icon" class="text-6xl mb-4"></div>
-                <h2 class="text-3xl font-bold text-primary mb-2">Quiz Completed!</h2>
-                <p class="text-xl text-slate-600 mb-6">Your score: <span id="final-score" class="font-bold text-accent text-2xl"></span>/10</p>
+                <h2 class="text-3xl font-bold text-primary mb-2">Exam Simulation Completed!</h2>
+                <p class="text-xl text-slate-600 mb-6">Your Score: <span id="final-score" class="font-bold text-accent text-3xl"></span>/10</p>
                 
-                <div id="score-message" class="text-slate-500 mb-8 max-w-md mx-auto px-4"></div>
+                <div id="score-message" class="text-slate-600 mb-8 max-w-md mx-auto px-4 leading-relaxed"></div>
                 
-                <button onclick="resetQuiz()" class="bg-primary hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
-                    <i class="fa-solid fa-rotate-right mr-2"></i> Restart
+                <button onclick="resetQuiz()" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold py-3 px-8 rounded-full transition-colors mr-2">
+                    Review Notes
+                </button>
+                <button onclick="resetQuiz(true)" class="bg-primary hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105 mt-2 sm:mt-0">
+                    <i class="fa-solid fa-rotate-right mr-2"></i> Retake Test
                 </button>
             </div>
         </section>
     </main>
 
-    <!-- Google Translate Script -->
+    <!-- Google Translate Script (Configured to translate to French) -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
-                includedLanguages: 'fr', // Only allows translating to French as requested
+                includedLanguages: 'fr', 
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
@@ -369,23 +436,21 @@
     <script>
         // Tab Management
         function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => {
-                el.classList.remove('active');
-            });
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             
-            document.getElementById('tab-courses').className = "nav-tab flex-1 whitespace-nowrap px-4 py-2 bg-slate-100 text-slate-600 rounded-t-lg font-medium transition-colors border-b-2 border-transparent hover:bg-slate-200";
-            document.getElementById('tab-quiz').className = "nav-tab flex-1 whitespace-nowrap px-4 py-2 bg-slate-100 text-slate-600 rounded-t-lg font-medium transition-colors border-b-2 border-transparent hover:bg-slate-200";
+            document.getElementById('tab-courses').className = "nav-tab flex-1 whitespace-nowrap px-4 py-3 bg-slate-100 text-slate-500 rounded-t-lg font-semibold transition-colors border-b-4 border-transparent hover:bg-slate-200 hover:text-slate-700";
+            document.getElementById('tab-quiz').className = "nav-tab flex-1 whitespace-nowrap px-4 py-3 bg-slate-100 text-slate-500 rounded-t-lg font-semibold transition-colors border-b-4 border-transparent hover:bg-slate-200 hover:text-slate-700";
             
             document.getElementById(tabId + '-section').classList.add('active');
             
             if(tabId === 'courses') {
-                document.getElementById('tab-courses').className = "nav-tab flex-1 whitespace-nowrap px-4 py-2 bg-white text-primary rounded-t-lg font-medium transition-colors border-b-2 border-accent";
+                document.getElementById('tab-courses').className = "nav-tab flex-1 whitespace-nowrap px-4 py-3 bg-white text-primary rounded-t-lg font-bold transition-colors border-b-4 border-accent shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]";
             } else {
-                document.getElementById('tab-quiz').className = "nav-tab flex-1 whitespace-nowrap px-4 py-2 bg-primary text-white rounded-t-lg font-medium transition-colors border-b-2 border-transparent";
+                document.getElementById('tab-quiz').className = "nav-tab flex-1 whitespace-nowrap px-4 py-3 bg-primary text-white rounded-t-lg font-bold transition-colors border-b-4 border-transparent shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]";
             }
         }
 
-        // Accordion for Study Notes
+        // Accordion Management
         function toggleAccordion(contentId, iconId) {
             const content = document.getElementById(contentId);
             const icon = document.getElementById(iconId);
@@ -393,128 +458,184 @@
             if (content.classList.contains('hidden')) {
                 content.classList.remove('hidden');
                 icon.style.transform = 'rotate(180deg)';
+                content.parentElement.classList.add('border-secondary');
             } else {
                 content.classList.add('hidden');
                 icon.style.transform = 'rotate(0deg)';
+                content.parentElement.classList.remove('border-secondary');
             }
         }
 
-        // Quiz Data
-        const questions = [
+        // Master Question Bank based EXACTLY on the provided doc.
+        const masterQuestions = [
             {
-                question: "According to Classical Realism theory (e.g., Machiavelli, Morgenthau), what is the primary source of international conflict?",
+                question: "According to the professor, what does 'Anarchy' mean in the international system?",
                 options: [
-                    "The anarchic international system",
-                    "Economic inequality between the Global North and South",
-                    "Human nature, which is inherently selfish and power-seeking",
-                    "The lack of strong international institutions"
-                ],
-                correctAnswer: 2,
-                explanation: "Classical Realism places the cause of conflict at the individual level (flawed human nature), unlike Neorealism which attributes it to the anarchic structure of the system."
-            },
-            {
-                question: "What key distinction separates defensive realism (Waltz) from offensive realism (Mearsheimer)?",
-                options: [
-                    "Waltz argues states seek global hegemony, while Mearsheimer favors disarmament.",
-                    "Waltz believes states seek sufficient security (maintaining the status quo), while Mearsheimer argues they must pursue hegemony to survive.",
-                    "Defensive realism relies on liberalism, while offensive realism relies on Marxism.",
-                    "There is no difference; the terms are synonymous."
+                    "A state of total chaos and continuous warfare.",
+                    "The absence of an overarching global authority above states.",
+                    "A system where multinational corporations control governments.",
+                    "A temporary breakdown of diplomatic relations."
                 ],
                 correctAnswer: 1,
-                explanation: "Kenneth Waltz (defensive) argues that seeking too much power triggers a balancing coalition against the state. Mearsheimer (offensive) claims the only way to ensure security in an anarchic world is to become the dominant hegemon."
+                explanation: "Anarchy does NOT mean chaos. It simply means there is no global government or central authority capable of imposing its rules on all sovereign states."
             },
             {
-                question: "Under the 1933 Montevideo Convention, which criterion is NOT strictly required for an entity to be legally qualified as a state?",
+                question: "Which of the following is the professor's exact definition of 'International Order'?",
                 options: [
-                    "A permanent population",
-                    "A defined territory",
-                    "A government",
-                    "Formal recognition by the United Nations",
-                    "The capacity to enter into relations with other states"
-                ],
-                correctAnswer: 3,
-                explanation: "The existence of a state is a fact independent of formal UN recognition, although diplomatic recognition (external sovereignty) facilitates its participation in global affairs."
-            },
-            {
-                question: "What is the core premise of the 'Democratic Peace Theory' inherited from Immanuel Kant?",
-                options: [
-                    "Democracies are naturally pacifist and never go to war.",
-                    "Liberal democratic states almost never go to war with one another due to shared values and institutional constraints.",
-                    "Peace can only be maintained by a military balance of power.",
-                    "Democracies must impose peace through military force (Realpolitik)."
-                ],
-                correctAnswer: 1,
-                explanation: "The theory states that democracies do not fight EACH OTHER (though they may still fight non-democracies). Citizens, who pay the cost of war, act as a constraint on leaders."
-            },
-            {
-                question: "How does Liberalism (Institutionalism) perceive the role of international institutions like the WTO or UN?",
-                options: [
-                    "They are tools used exclusively by great powers to establish dominance.",
-                    "They are useless because only military force matters.",
-                    "They are essential because they create rules, reduce uncertainty, and foster cooperation (positive-sum game).",
-                    "They must act as a true global government replacing sovereign states."
+                    "The balance of power achieved through military alliances.",
+                    "A set of treaties signed by the United Nations.",
+                    "Regularized practices of exchange among discrete political units that recognize each other to be independent.",
+                    "The global dominance of a single superpower."
                 ],
                 correctAnswer: 2,
-                explanation: "For liberals, even though the world is anarchic, institutions and 'international regimes' create interdependence and predictability, thereby facilitating cooperation."
+                explanation: "This is the exact definition the professor insisted on. Interaction through trade, diplomacy, and cooperation creates this order."
             },
             {
-                question: "In the 'Levels of Analysis' in IR, studying the impact of domestic public opinion and bureaucracies on foreign policy belongs to which level?",
+                question: "According to Liberalism, does Interdependence guarantee peace?",
                 options: [
-                    "System level",
-                    "State / Domestic level",
+                    "Yes, because states will never risk economic destruction.",
+                    "Yes, it creates a Harmony of Interests that makes war impossible.",
+                    "No, it only reduces the incentives for war, but does not guarantee peace.",
+                    "No, interdependence actually increases the likelihood of war."
+                ],
+                correctAnswer: 2,
+                explanation: "EXAM TRAP: Interdependence does NOT guarantee peace. It raises the cost of conflict, lowering incentives, but geopolitics and security competition (e.g., US-China) can still override it."
+            },
+            {
+                question: "What does the phrase 'It's better to be Godzilla than to be Bambi' illustrate in Realist theory?",
+                options: [
+                    "Environmental protection is secondary to industrial growth.",
+                    "Weak states (Bambi) should seek powerful allies to survive against threats.",
+                    "States should prioritize soft power over hard power.",
+                    "Multinational corporations are more powerful than small states."
+                ],
+                correctAnswer: 1,
+                explanation: "In an anarchic system (Security Dilemma), a weak state that cannot build its own power must rely on a 'powerful ally' to ensure its survival."
+            },
+            {
+                question: "What historic event in 1648 marks the development of the modern nation-state system?",
+                options: [
+                    "The Congress of Vienna",
+                    "The Treaty of Versailles",
+                    "The Peace of Westphalia",
+                    "The Bretton Woods Conference"
+                ],
+                correctAnswer: 2,
+                explanation: "The Peace of Westphalia (1648) established the concepts of state sovereignty and territorial integrity, forming the basis of the modern state system."
+            },
+            {
+                question: "What is the core objective of the 'Containment' strategy (Truman Doctrine)?",
+                options: [
+                    "To promote global free trade and reduce tariffs.",
+                    "To prevent an adversary (like the Soviet Union) from expanding its power.",
+                    "To dismantle nuclear weapons worldwide.",
+                    "To replace the League of Nations with the UN."
+                ],
+                correctAnswer: 1,
+                explanation: "Containment is a Realist strategy aimed at stopping the spread of an adversary's influence and power, utilized extensively during the Cold War."
+            },
+            {
+                question: "How is 'Relative Power' defined, and why is it important?",
+                options: [
+                    "The total military budget of a state; it measures absolute strength.",
+                    "A state's power compared to the power of other actors; it determines actual influence.",
+                    "The use of culture to attract others; it replaces military force.",
+                    "Power granted by international institutions like the UN."
+                ],
+                correctAnswer: 1,
+                explanation: "In IR, absolute power matters less than Relative Power. A state's ability to influence others depends entirely on how its power stacks up against its rivals."
+            },
+            {
+                question: "Which of the following represents the 'Three S's' of Realism?",
+                options: [
+                    "Sovereignty, Society, Sanctions",
+                    "Security, Strategy, Soft-power",
+                    "Statism, Survival, Self-help",
+                    "System, Structure, Stability"
+                ],
+                correctAnswer: 2,
+                explanation: "The 3 S's are: Statism (states are primary actors), Survival (the main objective), and Self-help (states must protect themselves)."
+            },
+            {
+                question: "Which sequence correctly represents the Realist chain of conflict?",
+                options: [
+                    "Anarchy &rarr; Interdependence &rarr; Regimes &rarr; Peace",
+                    "Anarchy &rarr; Insecurity &rarr; Survival &rarr; Self-help &rarr; Security Dilemma &rarr; Arms Race",
+                    "Statism &rarr; Diplomacy &rarr; Soft Power &rarr; Hegemony",
+                    "Polarity &rarr; Containment &rarr; Unipolarity &rarr; Conflict"
+                ],
+                correctAnswer: 1,
+                explanation: "Because of Anarchy, states feel Insecure and prioritize Survival. They use Self-help to build power, causing a Security Dilemma, leading to an Arms Race and potential conflict."
+            },
+            {
+                question: "According to the Democratic Peace Theory, which statement is true?",
+                options: [
+                    "Democracies never go to war under any circumstances.",
+                    "Democracies are naturally pacifist and lack military power.",
+                    "Liberal democracies rarely go to war with EACH OTHER.",
+                    "Democracy promotion through military intervention guarantees peace."
+                ],
+                correctAnswer: 2,
+                explanation: "The theory states democracies don't fight other democracies due to shared values and institutions. However, they can and do fight non-democracies."
+            },
+            {
+                question: "What is an 'International Regime' in Liberal theory?",
+                options: [
+                    "A totalitarian government that violates human rights.",
+                    "A set of principles, norms, rules, and procedures that organize international cooperation.",
+                    "A military alliance designed to contain a rising superpower.",
+                    "The absolute dominance of a unipolar hegemon."
+                ],
+                correctAnswer: 1,
+                explanation: "Regimes (like the global environmental protection regime or nuclear non-proliferation) are mechanisms liberals believe help organize anarchy and foster cooperation."
+            },
+            {
+                question: "In the context of Levels of Analysis, examining a leader's background (e.g., Vladimir Putin as a former KGB officer) falls under which level?",
+                options: [
+                    "Systemic / International level",
+                    "Domestic level",
                     "Individual level",
-                    "Global level"
-                ],
-                correctAnswer: 1,
-                explanation: "The State level analyzes how internal factors (regime type, economy, public opinion, interest groups) influence a country's behavior on the international stage."
-            },
-            {
-                question: "What concept designates the political doctrine that the state is not subject to universal moral laws and acts solely for its survival and national interest?",
-                options: [
-                    "Institutional Liberalism",
-                    "Constructivism",
-                    "Raison d'État / Realpolitik",
-                    "Perpetual Peace"
+                    "Constructivist level"
                 ],
                 correctAnswer: 2,
-                explanation: "Realpolitik (or Raison d'État) is a pillar of realism asserting that universal morality does not apply to states; the supreme ethic of a state is national survival."
+                explanation: "The Individual level focuses on the psychology, beliefs, and personal histories of the decision-makers."
             },
             {
-                question: "What is a 'stateless nation'?",
+                question: "According to John Mearsheimer, what is 'Latent Power'?",
                 options: [
-                    "A territory completely empty of people.",
-                    "A state whose government has collapsed (failed state).",
-                    "A group of people sharing a common identity but lacking their own government and sovereign borders.",
-                    "A non-governmental organization (NGO)."
+                    "Power derived from a country's cultural attractiveness (Soft Power).",
+                    "Hidden nuclear weapons not declared to the UN.",
+                    "Resources like population and a strong economy that can be converted into military power.",
+                    "The veto power held by the P5 in the UN Security Council."
                 ],
                 correctAnswer: 2,
-                explanation: "It is a group possessing the characteristics of a nation (language, culture, history) but without its own sovereign state structure (e.g., Palestinians, Kurds)."
+                explanation: "Latent power refers to the raw socioeconomic ingredients (wealth, population) that allow a state to build formidable military strength."
             },
             {
-                question: "What does the concept of 'Self-help' mean in realist theory?",
+                question: "What distinguishes Neorealism (Structural Realism) from Classical Realism?",
                 options: [
-                    "States must collaborate with NGOs to help each other.",
-                    "In an anarchic system, a state can only rely on itself to guarantee its security and survival.",
-                    "States must request UN assistance in the event of a conflict.",
-                    "The free market economy regulates itself."
+                    "Neorealism believes human nature is inherently flawed and evil.",
+                    "Neorealism blames the anarchic structure of the international system for conflict, not human nature.",
+                    "Neorealism focuses entirely on domestic variables and public opinion.",
+                    "Neorealism believes international institutions can prevent war."
                 ],
                 correctAnswer: 1,
-                explanation: "In the absence of a global police force (anarchy), realists postulate that each state must ensure its own security (often by maximizing military power), which leads to the security dilemma."
+                explanation: "Classical Realism (Machiavelli, Morgenthau) blames human nature. Neorealism (Waltz, Mearsheimer) blames the anarchic structure of the system."
             },
             {
-                question: "How does the realist paradigm generally perceive globalization?",
+                question: "What does the professor mean by 'Never marry one theory'?",
                 options: [
-                    "As the end of the Nation-State and the dawn of a world government.",
-                    "As an epiphenomenon subordinate to geopolitics; the division into sovereign states remains the primary force.",
-                    "As the ultimate proof that Liberalism has won ('The end of history').",
-                    "As a purely cultural process with no political impact."
+                    "Theories are completely useless in International Business.",
+                    "You should only use Realism because it is the most accurate.",
+                    "No single theory explains everything; each acts as a lens offering a different perspective.",
+                    "Liberalism has replaced Realism entirely."
                 ],
-                correctAnswer: 1,
-                explanation: "For realists, globalization does not erase states. It is a secondary phenomenon (epiphenomenal); power dynamics and geopolitics continue to take precedence."
+                correctAnswer: 2,
+                explanation: "Theories are analytical tools. Realism explains conflict well, while Liberalism explains cooperation. You need multiple lenses to analyze IR properly."
             }
         ];
 
-        // Quiz State Variables
+        let currentQuizQuestions = [];
         let currentQuestionIndex = 0;
         let score = 0;
         let hasAnswered = false;
@@ -523,7 +644,6 @@
         const introScreen = document.getElementById('quiz-intro');
         const quizContainer = document.getElementById('quiz-container');
         const resultContainer = document.getElementById('result-container');
-        
         const questionCounterEl = document.getElementById('question-counter');
         const progressBarEl = document.getElementById('progress-bar');
         const questionTextEl = document.getElementById('question-text');
@@ -533,9 +653,21 @@
         const feedbackExplanationEl = document.getElementById('feedback-explanation');
         const nextBtnEl = document.getElementById('next-btn');
 
+        // Select 10 random questions from the master bank
+        function getRandomQuestions(num) {
+            const shuffled = [...masterQuestions].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, num);
+        }
+
         function startQuiz() {
+            currentQuizQuestions = getRandomQuestions(10);
+            currentQuestionIndex = 0;
+            score = 0;
+            
             introScreen.classList.add('hidden');
+            resultContainer.classList.add('hidden');
             quizContainer.classList.remove('hidden');
+            
             loadQuestion();
         }
 
@@ -545,24 +677,23 @@
             nextBtnEl.classList.add('hidden');
             optionsContainerEl.innerHTML = '';
             
-            const currentQ = questions[currentQuestionIndex];
+            const currentQ = currentQuizQuestions[currentQuestionIndex];
             
             // Update Header
-            questionCounterEl.textContent = `Question ${currentQuestionIndex + 1}/${questions.length}`;
-            const progressPercentage = ((currentQuestionIndex + 1) / questions.length) * 100;
+            questionCounterEl.textContent = `Question ${currentQuestionIndex + 1}/${currentQuizQuestions.length}`;
+            const progressPercentage = ((currentQuestionIndex) / currentQuizQuestions.length) * 100;
             progressBarEl.style.width = `${progressPercentage}%`;
             
             // Show Question
-            questionTextEl.textContent = currentQ.question;
+            questionTextEl.innerHTML = currentQ.question;
             
             // Render Options
             currentQ.options.forEach((optionText, index) => {
                 const button = document.createElement('button');
-                button.className = "quiz-option w-full text-left p-4 rounded-lg border-2 border-slate-200 hover:border-secondary bg-white text-slate-700 font-medium focus:outline-none";
+                button.className = "quiz-option w-full text-left p-4 rounded-lg border-2 border-slate-200 hover:border-secondary bg-white text-slate-700 font-medium focus:outline-none flex items-start";
                 
-                // Add A, B, C, D structure
                 const letter = String.fromCharCode(65 + index);
-                button.innerHTML = `<span class="inline-block w-8 h-8 bg-slate-100 text-slate-500 text-center leading-8 rounded mr-3 font-bold">${letter}</span> ${optionText}`;
+                button.innerHTML = `<span class="flex-shrink-0 inline-block w-8 h-8 bg-slate-100 text-slate-500 text-center leading-8 rounded mr-3 font-bold">${letter}</span> <span class="mt-1">${optionText}</span>`;
                 
                 button.onclick = () => selectOption(index, button);
                 optionsContainerEl.appendChild(button);
@@ -570,12 +701,11 @@
         }
 
         function selectOption(selectedIndex, buttonElement) {
-            if (hasAnswered) return; // Prevent multiple clicks
+            if (hasAnswered) return; 
             hasAnswered = true;
             
-            const currentQ = questions[currentQuestionIndex];
+            const currentQ = currentQuizQuestions[currentQuestionIndex];
             const isCorrect = selectedIndex === currentQ.correctAnswer;
-            
             const allButtons = optionsContainerEl.querySelectorAll('button');
             
             // Disable all buttons
@@ -584,44 +714,48 @@
                 btn.style.cursor = 'default';
             });
             
-            // Highlight correct/incorrect answers
+            // Handle Correct/Incorrect Styling
             if (isCorrect) {
                 score++;
                 buttonElement.classList.add('correct');
-                buttonElement.innerHTML = buttonElement.innerHTML.replace('bg-slate-100 text-slate-500', 'bg-white/20 text-white');
+                buttonElement.querySelector('span').classList.replace('bg-slate-100', 'bg-white/20');
+                buttonElement.querySelector('span').classList.replace('text-slate-500', 'text-white');
                 
                 feedbackStatusEl.innerHTML = '<i class="fa-solid fa-circle-check text-green-600 mr-2"></i> Correct!';
                 feedbackStatusEl.className = "font-bold mb-1 text-green-700";
                 feedbackContainerEl.className = "mt-6 p-4 rounded-lg border bg-green-50 border-green-200 text-sm animation-fadeIn";
             } else {
                 buttonElement.classList.add('wrong');
-                buttonElement.innerHTML = buttonElement.innerHTML.replace('bg-slate-100 text-slate-500', 'bg-white/20 text-white');
+                buttonElement.querySelector('span').classList.replace('bg-slate-100', 'bg-white/20');
+                buttonElement.querySelector('span').classList.replace('text-slate-500', 'text-white');
                 
-                // Show the correct answer in green
+                // Highlight correct answer
                 const correctBtn = allButtons[currentQ.correctAnswer];
                 correctBtn.classList.add('border-green-500', 'bg-green-50');
+                correctBtn.querySelector('span').classList.replace('bg-slate-100', 'bg-green-200');
+                correctBtn.querySelector('span').classList.replace('text-slate-500', 'text-green-800');
                 
                 feedbackStatusEl.innerHTML = '<i class="fa-solid fa-circle-xmark text-red-600 mr-2"></i> Incorrect';
                 feedbackStatusEl.className = "font-bold mb-1 text-red-700";
                 feedbackContainerEl.className = "mt-6 p-4 rounded-lg border bg-red-50 border-red-200 text-sm animation-fadeIn";
             }
             
-            // Display Explanation
-            feedbackExplanationEl.innerHTML = `<strong>Explanation:</strong> ${currentQ.explanation}`;
+            // Show Explanation
+            feedbackExplanationEl.innerHTML = `<strong>Why?</strong> ${currentQ.explanation}`;
             feedbackContainerEl.classList.remove('hidden');
             
-            // Update button text if it's the last question
-            if (currentQuestionIndex === questions.length - 1) {
-                nextBtnEl.innerHTML = 'View Results <i class="fa-solid fa-flag-checkered ml-2"></i>';
+            // Set Next Button text
+            if (currentQuestionIndex === currentQuizQuestions.length - 1) {
+                nextBtnEl.innerHTML = 'Finish Exam <i class="fa-solid fa-flag-checkered ml-2"></i>';
+            } else {
+                nextBtnEl.innerHTML = 'Next Question <i class="fa-solid fa-arrow-right ml-2"></i>';
             }
-            
             nextBtnEl.classList.remove('hidden');
         }
 
         function nextQuestion() {
             currentQuestionIndex++;
-            
-            if (currentQuestionIndex < questions.length) {
+            if (currentQuestionIndex < currentQuizQuestions.length) {
                 loadQuestion();
             } else {
                 showResults();
@@ -632,36 +766,40 @@
             quizContainer.classList.add('hidden');
             resultContainer.classList.remove('hidden');
             
+            // Set 100% progress
+            progressBarEl.style.width = '100%';
+            
             document.getElementById('final-score').textContent = score;
             
             const iconEl = document.getElementById('score-icon');
             const messageEl = document.getElementById('score-message');
             
-            const percentage = score / questions.length;
-            
-            if (percentage === 1) {
+            if (score >= 9) {
                 iconEl.innerHTML = '<i class="fa-solid fa-trophy text-yellow-400"></i>';
-                messageEl.innerHTML = "<strong>Perfect!</strong> You have completely mastered the basic concepts of realism and liberalism in IR.";
-            } else if (percentage >= 0.7) {
+                messageEl.innerHTML = "<strong>Outstanding!</strong> You've mastered the Three S's, the nuances of interdependence, and the systemic levels. You are ready for the professor's exam.";
+            } else if (score >= 7) {
                 iconEl.innerHTML = '<i class="fa-solid fa-medal text-slate-300"></i>';
-                messageEl.innerHTML = "<strong>Great job!</strong> You have a solid understanding of the theories. Review the few mistakes in the study notes section.";
-            } else if (percentage >= 0.5) {
+                messageEl.innerHTML = "<strong>Solid performance.</strong> You know the core concepts well, but make sure to review the specific traps (like Interdependence vs Peace).";
+            } else if (score >= 5) {
                 iconEl.innerHTML = '<i class="fa-solid fa-thumbs-up text-blue-400"></i>';
-                messageEl.innerHTML = "<strong>Not bad.</strong> You know the basics, but some nuances between neorealism and classical realism need a quick review.";
+                messageEl.innerHTML = "<strong>Good effort.</strong> Review the exact definitions from the 'Study Notes' tab, especially the Realist logic chain.";
             } else {
-                iconEl.innerHTML = '<i class="fa-solid fa-book-open text-orange-400"></i>';
-                messageEl.innerHTML = "<strong>Keep working at it.</strong> Take some time to carefully re-read the study notes before attempting the quiz again!";
+                iconEl.innerHTML = '<i class="fa-solid fa-book-open text-danger"></i>';
+                messageEl.innerHTML = "<strong>Needs Review.</strong> Don't panic! Head over to the 'Study Notes' tab and read through the Professor's Exam Guidelines again.";
             }
         }
 
-        function resetQuiz() {
-            currentQuestionIndex = 0;
-            score = 0;
-            resultContainer.classList.add('hidden');
-            
-            nextBtnEl.innerHTML = 'Next <i class="fa-solid fa-arrow-right ml-2"></i>';
-            
-            startQuiz();
+        function resetQuiz(restart = false) {
+            if(restart) {
+                startQuiz();
+            } else {
+                // Switch back to notes tab
+                switchTab('courses');
+                // Reset UI state for next time they open the quiz tab
+                introScreen.classList.remove('hidden');
+                resultContainer.classList.add('hidden');
+                quizContainer.classList.add('hidden');
+            }
         }
     </script>
 </body>
